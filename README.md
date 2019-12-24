@@ -10,17 +10,16 @@
 
 ### Association
 has_many :messages
-has_many :groups, through: :users_groups
+has_many :groups, through: :groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|text|null: false|
-|user_id|references|null: false, foreign_key: true|
 
 ### Association
 has_many :messages
-has_many :users, through: :users_groups
+has_many :users, through: :groups_users
 
 
 ## groups_usersテーブル

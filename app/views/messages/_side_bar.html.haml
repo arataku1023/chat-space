@@ -1,0 +1,18 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %p.side-header__box__username
+        araki
+      %ul.side-header__box__menu
+        %li.side-header__box__edit-user
+          = link_to "#", class: "edit-icon" do
+            = icon('fas', 'edit')
+        %li.side-header__box__new-group
+          = link_to "#", class: "cog-icon" do
+            = icon('fas', 'cog')
+  .groups
+    .group
+      %p.group__group-name
+        group-name
+      %p.group__lastest-message
+        lastest-message

@@ -17,7 +17,8 @@
       .input-box__message
         type a message
       .input-box__image
-        =  link_to "#" do
+        %label
           = icon('fa', 'image')
+          %input.hidden{type: 'file'}
     .message-form__send-btn
-      send
+      Send

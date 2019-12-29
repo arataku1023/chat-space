@@ -13,7 +13,8 @@
   .groups
     - current_user.groups.each do |group|
       .group
-        %p.group__group-name
-          = group.name
-        %p.group__lastest-message
-          lastest-message
+        = link_to group_messages_path(group.id) do
+          .group__name
+            = group.name
+          .group__message
+            = group.show_last_message

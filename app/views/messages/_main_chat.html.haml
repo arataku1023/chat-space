@@ -14,17 +14,6 @@
   
   .messages
     = render @messages
-
-  -# .message-form
-  -#   .input-box
-  -#     .input-box__message
-  -#       type a message
-  -#     .input-box__image
-  -#       %label
-  -#         = icon('fa', 'image')
-  -#         %input.hidden{type: 'file'}
-  -#   .message-form__send-btn
-  -#     Send
   
   .form
     = form_for [@group, @message] do |f|

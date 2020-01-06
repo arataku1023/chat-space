@@ -9,29 +9,17 @@
           - @group.users.each do |member| 
             = member.name
     .main-header__edit-btn
-      = link_to edit_group_path(@group) do
+      = link_to edit_group_path(@group),class: "edit-btn" do
         Edit
   
   .messages
     = render @messages
-
-  -# .message-form
-  -#   .input-box
-  -#     .input-box__message
-  -#       type a message
-  -#     .input-box__image
-  -#       %label
-  -#         = icon('fa', 'image')
-  -#         %input.hidden{type: 'file'}
-  -#   .message-form__send-btn
-  -#     Send
   
-  .message-form
+  .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      .input-box__image
+      .form__image
         = f.label :image, class: 'form__mask__image' do
-          = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'hidden'
-      .message-form__send-btn
-        = f.submit 'Send', class: 'form__submit'
+          = icon('fas', 'image', class: 'icon')
+      = f.submit 'Send', class: 'form__submit'

@@ -91,8 +91,6 @@ var reloadMessages = function() {
     data: {id: last_message_id}
   })
   .done(function(messages) {
-
-    if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     if (messages.length !== 0) {
       //追加するHTMLの入れ物を作る
       var insertHTML = '';
@@ -105,12 +103,13 @@ var reloadMessages = function() {
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $("#new_message")[0].reset();
       $(".form__submit").prop("disabled", false);
-    }
   }
   })
-  .fail(function() {
-    alert('送信できませんでした');
-  });
+    .fail(function() {
+      alert('送信できませんでした');
+    });
 }
-setInterval(reloadMessages, 7000);
+if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+  setInterval(reloadMessages, 7000);
+}
 });

@@ -109,7 +109,7 @@ var reloadMessages = function() {
   }
   })
   .fail(function() {
-    console.log('error');
+    alert('送信できませんでした');
   });
 }
 setInterval(reloadMessages, 7000);
